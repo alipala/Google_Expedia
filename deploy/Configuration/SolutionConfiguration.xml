@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+   <assemblies/>
+   <projectAssemblies/>
+   <resources/>
+   <projects>
+      <add name="Stylelabs.ScreenshotUtility" path="Stylelabs.ScreenshotUtility">
+         <projectAssemblies>
+            <search>*.dll</search>
+            <add>Stylelabs.ScreenshotUtility</add>
+         </projectAssemblies>
+         <resources>
+            <add>Stylelabs.ScreenshotUtility/Config</add>
+         </resources>
+      </add>
+      <add name="Stylelabs.ZephyrTestCaseFormatter" path="Stylelabs.ZephyrTestCaseFormatter">
+         <projectAssemblies>
+            <search>*.dll</search>
+            <add>Stylelabs.ZephyrTestCaseFormatter</add>
+         </projectAssemblies>
+         <configFiles>
+            <add>Stylelabs.ZephyrTestCaseFormatter.exe.config</add>
+         </configFiles>
+         <resources/>
+      </add>
+   </projects>
+</configuration>

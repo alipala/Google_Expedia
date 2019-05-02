@@ -1,0 +1,295 @@
+@font-face {
+    font-family: 'RalewayRegular';
+    src: url('fonts/raleway-regular-m.eot');
+    src: url('fonts/raleway-regular-m.eot') format('embedded-opentype'), url('fonts/raleway-regular-m.woff') format('woff'), url('fonts/raleway-regular-m.ttf') format('truetype'), url('fonts/raleway-regular-m.svg#RalewayRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'RalewayBold';
+    src: url('fonts/raleway-bold-m.eot');
+    src: url('fonts/raleway-bold-m.eot') format('embedded-opentype'), url('fonts/raleway-bold-m.woff') format('woff'), url('fonts/raleway-bold-m.ttf') format('truetype'), url('fonts/raleway-bold-m.svg#RalewayBold') format('svg');
+}
+
+
+/* prince xml settings */
+
+@page {
+    margin: 40pt 30pt 40pt 30pt;
+    size: A4;
+
+    @top-center {
+        content: string(doctitle);
+        font-family: RalewayRegular;
+        font-size: 9pt;
+        color: #999;
+    }
+
+    @bottom-left {
+        content: "marketingcontenthub.com";
+        font-family: RalewayRegular;
+        font-size: 9pt;
+        color: #ccc;
+    }
+
+
+    @bottom-right {
+        content: counter(page);
+        border-top: 1px solid #000;
+        width: 50px;
+        text-align: center;
+        font-family: RalewayRegular;
+        font-size: 10pt;
+        padding-top: 0px;
+    }
+}
+
+@page no_numbers {
+    @top-center {
+        content: normal;
+    }
+
+    @bottom-right {
+        content: normal;
+    }
+}
+
+.no-page-number {
+    page: no_numbers;
+}
+
+.main-content {
+    counter-reset: page 1;
+}
+
+.no-page-number {
+    page-break-after: always;
+}
+
+
+#footer {
+    flow: static(footer);
+}
+
+    #footer img {
+        vertical-align: middle;
+    }
+
+bookmark {
+    prince-bookmark-target: attr(href);
+}
+
+/* styles for the table of contents: because we can't give the list a class we target the ones that come directly after an h2 */
+h2 + ul > li > a:after,
+h2 + ul ul > li > a:after {
+    content: leader('.') target-counter(attr(href), page);
+}
+
+
+h2 + ul ::marker,
+h2 + ul ul ::marker {
+    content: counters(list-item, ".", decimal);
+    color: #000;
+    font-weight: bold;
+}
+
+/* end of prince xml settings */
+
+/* the following styles are ordered alphabetically */
+a:link {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    font-style: italic;
+    margin: 1.5em 10px;
+    padding: .5em 10px;
+    page-break-inside: avoid;
+    quotes: \201C\201D\2018\2019;
+}
+
+    blockquote p {
+        display: inline;
+    }
+
+    blockquote:before {
+        color: #ff4500;
+        content: open-quote;
+        font-size: 4em;
+        line-height: .1em;
+        margin-right: .25em;
+        vertical-align: -.4em;
+    }
+
+body {
+    font-family: RalewayRegular;
+    font-size: 9.5pt;
+    line-height: 1.618;
+}
+
+code {
+    white-space: pre-wrap !important;
+}
+
+    code > span.al, code > span.er {
+        color: red;
+        font-weight: 700;
+    }
+
+    code > span.ch, code > span.st {
+        color: #4070a0;
+    }
+
+    code > span.co {
+        color: #60a0b0;
+        font-style: italic;
+    }
+
+    code > span.dt {
+        color: #902000;
+    }
+
+    code > span.dv, code > span.bn, code > span.fl {
+        color: #40a070;
+    }
+
+    code > span.fu {
+        color: #06287e;
+    }
+
+    code > span.kw {
+        color: #007020;
+        font-weight: 700;
+    }
+
+    code > span.ot {
+        color: #007020;
+    }
+
+code, kbd {
+    font-family: monospace;
+}
+
+code, tt {
+    background: none repeat scroll 0 0 #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 1px 3px;
+}
+
+h1 ~ h1, body .syntaxhighlighter .toolbar {
+    display: none;
+}
+
+h1, h1 a {
+    color: #000;
+    font-size: 36pt;
+    margin: .67em;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-weight: 400;
+}
+
+    h1.visible, pre code, pre {
+        display: block;
+    }
+
+h2 {
+    color: #ff4500;
+    font-size: 30pt;
+    page-break-before: always;
+    string-set: doctitle content();
+}
+
+h3 {
+    font-family: RalewayBold;
+    font-size: 18pt;
+    font-weight: 700;
+    margin: 1em 0;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 18pt;
+    margin: 1em 0;
+}
+
+h5 {
+    font-size: 16pt;
+}
+
+h6, h7, h8, h9 {
+    font-size: 15pt;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 1em 0;
+}
+
+pre, code {
+    font-family: 'Bitstream Vera Sans Mono','DejaVu Sans Mono',Monaco,monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    page-break-inside: avoid;
+}
+
+table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    margin-top: 10px;
+    width: 100%;
+}
+
+    table > tbody > tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    table.sourceCode {
+        line-height: 100%;
+        width: 100%;
+    }
+
+    table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+        border: none;
+        margin: 0;
+        padding: 0;
+        vertical-align: baseline;
+    }
+
+td.lineNumbers {
+    border-right: 1px solid #aaa;
+    color: #aaa;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: right;
+}
+
+td.sourceCode {
+    padding-left: 5px;
+}
+
+th, td {
+    padding: 7px 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+ul ul, ol ol {
+    margin-left: 30px;
+}
+
+ul, ol {
+    margin-left: 15px;
+}

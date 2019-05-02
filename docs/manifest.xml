@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<docs>
+  <doc>
+    <name>STYLELABS-QA-Changelogs</name>
+    <folder>changelog</folder>
+    <formats>
+      <format>Pdf</format>
+    </formats>
+    <prepends>
+      <prepend>changelog/cover.html</prepend>
+    </prepends>
+    <clear>changelog/clear_redirects.txt</clear>
+    <styles>
+      <style>styles/default/style.css</style>
+    </styles>
+  </doc>
+  <doc>
+    <name>STYLELABS-QA-Manual</name>
+    <folder>manual</folder>
+    <formats>
+      <format>Pdf</format>
+    </formats>
+    <prepends>
+      <prepend>manual/cover.html</prepend>
+    </prepends>
+    <clear>manual/clear_redirects.txt</clear>
+    <styles>
+      <style>styles/default/style.css</style>
+    </styles>
+  </doc>
+</docs>
